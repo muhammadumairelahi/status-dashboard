@@ -4,7 +4,7 @@ export interface Website {
   type: string;
 }
 
-export const websites: Website[] = [
+export let websites: Website[] = [
   { name: 'Main Website', status: 'running', type: 'website' },
   { name: 'Customer Portal', status: 'running', type: 'website' },
   { name: 'API Service', status: 'running', type: 'software' },
