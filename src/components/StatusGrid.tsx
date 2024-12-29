@@ -4,6 +4,7 @@ interface Website {
   name: string;
   status: 'running' | 'maintenance' | 'down';
   type: string;
+  url?: string
 }
 
 interface StatusGridProps {
@@ -16,7 +17,7 @@ const StatusGrid: React.FC<StatusGridProps> = ({ websites }) => {
       {websites.map((website, index) => (
         <div key={index} className="rounded-lg border bg-card text-card-foreground shadow-sm">
           <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
-            <h3 className="tracking-tight text-sm font-medium">{website.name}</h3>
+            <h3 className="tracking-tight text-sm font-medium"><a href={website.url}>{website.name}</a></h3>
             <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
               {website.type}
             </div>
